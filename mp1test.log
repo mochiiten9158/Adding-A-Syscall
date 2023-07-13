@@ -1,0 +1,168 @@
+starting build
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+make[1]: Nothing to be done for 'both'.
+make[1]: Leaving directory '/tmp/tmpspP1MD/p'
+
+
+test build PASSED
+ (build xv6 using make)
+
+starting getcount1
+
+**********************************************************************
+
+Test getcount1
+call getcount(SYS_exec)
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp1-mochiiten9158-main/tests/mp1/ctests/getcount1.c
+Project path is: /tmp/tmpspP1MD/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp1-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 703 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpspP1MD/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+PASSED TEST!
+
+test getcount1 PASSED (10 of 10)
+ (call getcount(SYS_exec))
+
+starting getcount2
+
+**********************************************************************
+
+Test getcount2
+call getcount after opening/reading from a file
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp1-mochiiten9158-main/tests/mp1/ctests/getcount2.c
+Project path is: /tmp/tmpspP1MD/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp1-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 705 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpspP1MD/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+PASSED TEST!
+
+test getcount2 PASSED (10 of 10)
+ (call getcount after opening/reading from a file)
+
+starting getcount3
+
+**********************************************************************
+
+Test getcount3
+call getcount in parent and child processes
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp1-mochiiten9158-main/tests/mp1/ctests/getcount3.c
+Project path is: /tmp/tmpspP1MD/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp1-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 704 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpspP1MD/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpspP1MD/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+abracadabra
+hocuspocus
+shazam!
+PASSED TEST!
+
+
+test getcount3 PASSED (10 of 10)
+ (call getcount in parent and child processes)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build xv6 using make)
+
+test getcount1 PASSED (10 of 10)
+ (call getcount(SYS_exec))
+
+test getcount2 PASSED (10 of 10)
+ (call getcount after opening/reading from a file)
+
+test getcount3 PASSED (10 of 10)
+ (call getcount in parent and child processes)
+
+Passed 4 of 4 tests.
+Overall 4 of 4
+Points 30 of 30
